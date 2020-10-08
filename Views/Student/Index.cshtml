@@ -1,0 +1,132 @@
+@model UMSTestJS.Models.ViewModels.StudentViewModel
+@{
+    ViewData["Title"] = "Index - Student";
+    
+}
+
+<div class="col-12">
+    <div class="row">
+        <div class="col-4">
+            <h2 class="text-primary">Students List</h2>
+        </div>
+        <div align="right" class="col-8 ">
+            <a data-toggle="modal" style="cursor: pointer;" data-target="#createPageModal" class="btn btn-primary text-white form control"><i class="fas fa-plus"></i> Create</a>
+        </div>
+    </div>
+    <br>
+
+    @if(Model.Students.Count() > 0)
+    {
+        <table id="tbl" class="table table-hover bordered table-sm text-center">
+            <thead class="table table-primary">
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Department</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.Students)
+                {
+                    <tr>
+                    <td>@Html.DisplayFor(m => item.Id)</td>
+                    <td>@Html.DisplayFor(m => item.Name)</td>
+                    <td>@Html.DisplayFor(m => item.Department)</td>
+                    </tr>
+                } 
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <p>No Students</p>
+    }
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="createPageModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Register New Student</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+           @* <form id="form">
+              
+              <div class="col-12">
+            <div class="form-group">
+                <div class="col-2 ">
+                    <label>@Html.DisplayNameFor(m => @Model.Student.Name)</label>
+                </div>
+                <div class="col-11">
+                    <input type="text" class="form-control" id="name">
+                    
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-2 ">
+                    <label>@Html.DisplayNameFor(m => @Model.Student.Department)</label>
+                </div>
+                <div class="col-11">
+                    <input type="text" class="form-control" id="department">
+                   
+                </div>
+            </div>
+            <div class="form-group row col-12">
+                <div class="col-6">
+                    <button type="button" class="btn btn-secondary form-control" data-dismiss="modal">Close</button>
+                </div>
+                <div class="col-6">
+                    <input type="button" id="button" class="btn btn-primary form-control" value="Save changes" />
+                </div>
+            </div>
+            <div class="col-12" id="ValMess"></div>
+        </div>
+          </form>  *@
+          <partial name="_registerStudentPartial" model="@Model.Student" />
+    </div>
+    
+    </div>
+  </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+ <script>
+    $(document).ready(function() {
+       
+            $("#button").click(function() {
+                 var url = '@Url.Action("RegisterStudent","Student")';
+    var Name = $("#name").val();
+    var Department = $("#department").val();
+    var formData = $("#form").serialize();
+    var dataString = "Name="+Name+"&Department="+Department ;
+    if(Name != "" && Department != ""){
+        $.ajax({
+            type:'GET',
+            url: url,
+            data:  dataString,
+            success:function() {
+                $('#createPageModal').modal('toggle');
+                document.getElementById("name").value = "";
+                document.getElementById("department").value = "";
+                $("#tbl").load(" #tbl");
+            },
+            error:function() {
+                alert("Error");
+            }
+        });
+    }
+    else{
+        $("#ValMess").append("You can't leave any fields empty").css('color', 'red');
+        setTimeout(function(){
+        $("#ValMess").html("");
+        },3000);
+    }
+        
+    });
+});
+    
+</script>
