@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/tahmid/Desktop/Projects/UMSTestJS/UMSTestJS.csproj": {}
+    "/home/tahmid/Desktop/Projects/GitRepo/UMSTestJS/UMSTestJS.csproj": {}
   },
   "projects": {
-    "/home/tahmid/Desktop/Projects/UMSTestJS/UMSTestJS.csproj": {
+    "/home/tahmid/Desktop/Projects/GitRepo/UMSTestJS/UMSTestJS.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/tahmid/Desktop/Projects/UMSTestJS/UMSTestJS.csproj",
+        "projectUniqueName": "/home/tahmid/Desktop/Projects/GitRepo/UMSTestJS/UMSTestJS.csproj",
         "projectName": "UMSTestJS",
-        "projectPath": "/home/tahmid/Desktop/Projects/UMSTestJS/UMSTestJS.csproj",
+        "projectPath": "/home/tahmid/Desktop/Projects/GitRepo/UMSTestJS/UMSTestJS.csproj",
         "packagesPath": "/home/tahmid/.nuget/packages/",
-        "outputPath": "/home/tahmid/Desktop/Projects/UMSTestJS/obj/",
+        "outputPath": "/home/tahmid/Desktop/Projects/GitRepo/UMSTestJS/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/tahmid/.nuget/NuGet/NuGet.Config"
