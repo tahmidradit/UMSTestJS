@@ -14397,6 +14397,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/home/tahmid/Desktop/Projects/GitRepo/UMSTestJS/Views/Department/Index.cshtml",
+      "TargetPath": "Views\\Department\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/home/tahmid/Desktop/Projects/GitRepo/UMSTestJS/Views/Home/Privacy.cshtml",
       "TargetPath": "Views\\Home\\Privacy.cshtml",
       "FileKind": "mvc"
@@ -14434,6 +14439,11 @@
     {
       "FilePath": "/home/tahmid/Desktop/Projects/GitRepo/UMSTestJS/Views/Student/Index.cshtml",
       "TargetPath": "Views\\Student\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/tahmid/Desktop/Projects/GitRepo/UMSTestJS/Views/Shared/_addDepartmentPartial.cshtml",
+      "TargetPath": "Views\\Shared\\_addDepartmentPartial.cshtml",
       "FileKind": "mvc"
     },
     {

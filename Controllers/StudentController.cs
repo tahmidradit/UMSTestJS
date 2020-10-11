@@ -20,7 +20,9 @@ namespace UMSTestJS.Controllers
             studentViewModel = new StudentViewModel()
             {
                 Student = new Student(),
-                Students = context.Students.ToList()
+                Department = new Department(),
+                Students = context.Students.ToList(),
+                Departments = context.Departments.ToList()
             };
         }
         public IActionResult Index() => View(studentViewModel);
@@ -45,6 +47,17 @@ namespace UMSTestJS.Controllers
             if(ModelState.IsValid)
             {
                 await context.Students.AddAsync(student);
+                await context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+            }
+            return View();
+        }
+
+        public async Task<IActionResult> AddDepartment(Department department)
+        {
+            if(ModelState.IsValid)
+            {
+                await context.Departments.AddAsync(department);
                 await context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }

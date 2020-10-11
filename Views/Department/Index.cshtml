@@ -1,0 +1,42 @@
+@model UMSTestJS.Models.ViewModels.StudentViewModel
+
+@{
+    ViewData["Title"] = "Index - Department"; 
+}
+
+<div class="col-12">
+    <div class="row">
+        <div class="col-4">
+            <h2 class="text-primary">Departments List</h2>
+        </div>
+        <div align="right" class="col-8 ">
+            <a class="btn btn-primary text-white form control"><i class="fas fa-plus"></i> Department</a>
+        </div>
+    </div>
+    <br>
+
+    @if(Model.Departments.Count() > 0)
+    {
+        <table id="tbl" class="table table-hover bordered table-sm text-center">
+            <thead class="table table-primary">
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.Departments)
+                {
+                    <tr>
+                    <td>@Html.DisplayFor(m => item.Id)</td>
+                    <td>@Html.DisplayFor(m => item.Name)</td>
+                    </tr>
+                } 
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <p>No Departments</p>
+    }
+</div>

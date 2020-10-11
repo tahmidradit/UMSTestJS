@@ -1,22 +1,14 @@
-@model Student
+@model Department
 
 <div>
-    <form id="form">
+    <form >
         <div class="col-12">
             <div class="form-group">
                 <div class="col-2 ">
                     <label asp-for="Name"></label>
                 </div>
                 <div class="col-11">
-                    <input type="text" class="form-control" id="name">
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="col-2 ">
-                    <label asp-for="Department"></label>
-                </div>
-                <div class="col-11">
-                    <input type="text" class="form-control" id="department">
+                    <input type="text" class="form-control" id="deptName">
                 </div>
             </div>
             <div class="form-group row col-12">
@@ -24,10 +16,10 @@
                     <button type="button" class="btn btn-secondary form-control" data-dismiss="modal">Close</button>
                 </div>
                 <div class="col-6">
-                    <input type="button" id="register" class="btn btn-primary form-control" value="Save changes" />
+                    <input type="button" id="addDeptButton" class="btn btn-primary form-control" value="Add Department" >
                 </div>
             </div>
-            <div class="col-12" id="ValMess"></div>
+            <div class="col-12" id="ValMsg"></div>
         </div>
     </form>
 </div>
