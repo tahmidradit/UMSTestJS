@@ -26,38 +26,11 @@ namespace UMSTestJS.Controllers
             };
         }
         public IActionResult Index() => View(studentViewModel);
-        public IActionResult Create() => View();
-
-        [HttpPost, ValidateAntiForgeryToken, ActionName("Create")]
-        public async Task<IActionResult> CreatePOST()
-        {
-            
-            if(ModelState.IsValid)
-            {
-                await context.Students.AddAsync(studentViewModel.Student);
-                await context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
-            }
-
-            return View();
-        }
-
         public async Task<IActionResult> RegisterStudent(Student student)
         {
             if(ModelState.IsValid)
             {
                 await context.Students.AddAsync(student);
-                await context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
-            }
-            return View();
-        }
-
-        public async Task<IActionResult> AddDepartment(Department department)
-        {
-            if(ModelState.IsValid)
-            {
-                await context.Departments.AddAsync(department);
                 await context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }

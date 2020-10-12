@@ -11,7 +11,7 @@ namespace UMSTestJS.Controllers
     public class DepartmentController : Controller
     {
         private readonly UMSTestJSDbContext context;
-        
+
         [BindProperty]
         public StudentViewModel studentViewModel { get; set; }
         public DepartmentController(UMSTestJSDbContext context)
@@ -19,27 +19,22 @@ namespace UMSTestJS.Controllers
             this.context = context;
             studentViewModel = new StudentViewModel()
             {
-                Student = new Student(),
                 Department = new Department(),
-                Students = context.Students.ToList(),
                 Departments = context.Departments.ToList()
             };
         }
-
-        public IActionResult Index()
-        {
-            //var departments = await context.Departments.ToListAsync();
-            return View(studentViewModel);
-        } 
+        public IActionResult Index() => View(studentViewModel);
+        
         public async Task<IActionResult> AddDepartment(Department department)
         {
             if(ModelState.IsValid)
             {
                 await context.Departments.AddAsync(department);
                 await context.SaveChangesAsync();
-                
+                return RedirectToAction(nameof(Index));
             }
-            return RedirectToAction(nameof(Index));
+
+            return View();
         }
     }
 }
