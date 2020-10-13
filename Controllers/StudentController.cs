@@ -1,10 +1,10 @@
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using UMSTestJS.Data;
 using UMSTestJS.Models;
 using UMSTestJS.Models.ViewModels;
+using Newtonsoft.Json.Serialization;
 
 namespace UMSTestJS.Controllers
 {
@@ -32,9 +32,9 @@ namespace UMSTestJS.Controllers
             {
                 await context.Students.AddAsync(student);
                 await context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                
             }
-            return View();
+            return RedirectToAction(nameof(Index));
         }
     }
 }

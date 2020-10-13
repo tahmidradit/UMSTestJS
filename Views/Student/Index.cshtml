@@ -30,7 +30,7 @@
                     <tr>
                         <td>@Html.DisplayFor(m => item.Id)</td>
                         <td>@Html.DisplayFor(m => item.Name)</td>
-                        <td>@Html.DisplayFor(m => item.Department)</td>
+                        <td>@Html.DisplayFor(m => item.DepartmentSelected)</td>
                     </tr>
                 } 
             </tbody>
@@ -52,7 +52,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <partial name="_registerStudentPartial" model="@Model.Student" />
+                <partial name="_registerStudentPartial" model="@Model" />
             </div>
         </div>
     </div>
@@ -67,20 +67,25 @@
             var Department = $("#department").val();
             var dataString = "Name="+Name+"&Department="+Department ;
             if(Name != "" && Department != "") {
-                $.ajax({
-                    type:'GET',
-                    url: url,
-                    data: dataString,
-                    success: function () {
+                    $("#department").change(function () {
+                        var id = $(this).val();
+                        $.ajax({
+                        type:'GET',
+                        url: url,
+                        contentType: 'application/json; charset-utf-8',
+                        data: "Name="+Name+"&Department="+Department,
+                        success: function () {
                         $('#createStudentPageModal').modal('toggle');
                         document.getElementById("name").value = "";
                         document.getElementById("department").value = "";
                         $("#tbl").load(" #tbl");
-                    },
-                    error: function () {
-                        alert("An unexpected error occured !");
-                    }
+                        },
+                        error: function () {
+                            alert("An unexpected error occured !");
+                        }
+                    });
                 });
+                
             }
             else {
                 $("#ValidationMessage").append("You can't leave any fields empty").css('color', 'red');

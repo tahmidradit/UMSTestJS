@@ -62,7 +62,7 @@
 <script>
     $(document).ready(function () {
         $("#submit").click(function () {
-            var url = '@Url.Action("Department","AddDepartment")';
+            var url = '@Url.Action("AddDepartment","Department")';
             var Name = $("#name").val();
             var dataString = "Name="+Name ;
             if(Name != "") {

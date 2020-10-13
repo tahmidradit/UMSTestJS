@@ -8,5 +8,6 @@ namespace UMSTestJS.Models.ViewModels
         public Department Department { get; set; }
         public IEnumerable<Student> Students { get; set; }
         public IEnumerable<Department> Departments { get; set; }
+        
     }
 }
