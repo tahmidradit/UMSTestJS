@@ -2,15 +2,17 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using UMSTestJS.Data;
 
 namespace UMSTestJS.Migrations
 {
     [DbContext(typeof(UMSTestJSDbContext))]
-    partial class UMSTestJSDbContextModelSnapshot : ModelSnapshot
+    [Migration("20201016190956_RemoveDataAnnotationsFromStudent")]
+    partial class RemoveDataAnnotationsFromStudent
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -46,9 +48,7 @@ namespace UMSTestJS.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(80)")
-                        .HasMaxLength(80);
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 

@@ -14427,6 +14427,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/home/tahmid/Desktop/Projects/GitRepo/UMSTestJS/Views/Shared/_createStudentPartial.cshtml",
+      "TargetPath": "Views\\Shared\\_createStudentPartial.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/home/tahmid/Desktop/Projects/GitRepo/UMSTestJS/Views/Shared/_ValidationScriptsPartial.cshtml",
       "TargetPath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
       "FileKind": "mvc"

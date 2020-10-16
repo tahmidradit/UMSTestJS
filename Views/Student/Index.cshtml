@@ -1,6 +1,7 @@
 @model UMSTestJS.Models.ViewModels.StudentViewModel
 @{
-    ViewData["Title"] = "Index - Student";  
+    ViewData["Title"] = "Index - Student";
+    Layout="~/Views/Shared/_Layout.cshtml";  
 }
 
 <div class="col-12">
@@ -9,11 +10,10 @@
             <h2 class="text-primary">Students List</h2>
         </div>
         <div align="right" class="col-8">
-            <a data-toggle="modal" style="cursor: pointer;" data-target="#createStudentPageModal" class="btn btn-primary text-white form control"><i class="fas fa-plus"></i> Student</a>
+            <a data-toggle="modal" style="cursor: pointer;" data-target="#createStudentPageModal" class="btn btn-primary text-white form control"><i class="fas fa-plus"></i> &nbsp; Student</a>
         </div>
     </div>
     <br>
-
     @if(Model.Students.Count() > 0)
     {
         <table id="tbl" class="table table-hover bordered table-sm text-center">
@@ -30,7 +30,7 @@
                     <tr>
                         <td>@Html.DisplayFor(m => item.Id)</td>
                         <td>@Html.DisplayFor(m => item.Name)</td>
-                        <td>@Html.DisplayFor(m => item.DepartmentSelected)</td>
+                        <td>@Html.DisplayFor(m => item.Department.Name)</td>
                     </tr>
                 } 
             </tbody>
@@ -42,57 +42,9 @@
     }
 </div>
 
-<div class="modal fade" id="createStudentPageModal" tabindex="-1" role="dialog" aria-labelledby="StudentLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="StudentLabel">Register New Student</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"></button>
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <partial name="_registerStudentPartial" model="@Model" />
-            </div>
-        </div>
-    </div>
-</div>
+<partial name="_createStudentPartial" />
 
-<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
-<script>
-    $(document).ready(function () {
-        $("#register").click(function () {
-            var url = '@Url.Action("RegisterStudent","Student")';
-            var Name = $("#name").val();
-            var Department = $("#department").val();
-            var dataString = "Name="+Name+"&Department="+Department ;
-            if(Name != "" && Department != "") {
-                    $("#department").change(function () {
-                        var id = $(this).val();
-                        $.ajax({
-                        type:'GET',
-                        url: url,
-                        contentType: 'application/json; charset-utf-8',
-                        data: "Name="+Name+"&Department="+Department,
-                        success: function () {
-                        $('#createStudentPageModal').modal('toggle');
-                        document.getElementById("name").value = "";
-                        document.getElementById("department").value = "";
-                        $("#tbl").load(" #tbl");
-                        },
-                        error: function () {
-                            alert("An unexpected error occured !");
-                        }
-                    });
-                });
-                
-            }
-            else {
-                $("#ValidationMessage").append("You can't leave any fields empty").css('color', 'red');
-                setTimeout(function () {
-                    $("#ValidationMessage").html("");
-                }, 3000);
-            }
-        });
-    });
-</script>
+
+
+
+
