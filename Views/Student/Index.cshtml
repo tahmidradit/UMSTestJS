@@ -11,10 +11,10 @@
 <script src="~/lib/jquery.unobtrusive-ajax/jquery.unobtrusive-ajax.min.js"></script>
 
 
-<div id="btnDiv" class="col-md-12 col-sm-12 row">
+<div class="col-md-12 col-sm-12 row">
     <div align="right" class="col-12">
         <a data-toggle="modal" style="cursor: pointer;" data-target="#addDepartmentPageModal" class="btn btn-primary text-white form control"><i class="fas fa-plus"></i> &nbsp; Department</a> &nbsp;
-        <a data-toggle="modal" style="cursor: pointer;" id="create" data-target="#createStudentPageModal" class="btn btn-primary text-white form control"><i class="fas fa-plus"></i> &nbsp; Student</a>
+        <a data-toggle="modal" style="cursor: pointer;" id="registerStudent" data-target="#registerStudentPageModal" class="btn btn-primary text-white form control"><i class="fas fa-plus"></i> &nbsp; Student</a>
     </div>  
 </div>
 <br>
@@ -28,18 +28,22 @@
 
 @section scripts{
     <script> 
-    $("#create").click(function () {
+    $("#registerStudent").click(function () {
             $(document).ready(function (){
+                
                 var url = '@Url.Action("DepartmentsListJsonReturn","Student")';
-                $.getJSON(url, { id: $("#department").val() }, function (data) {
+                var departmentOptions = $("#department");
 
-                var item = '';
-                $("#department").html('');
+                $.getJSON(url, { id: departmentOptions.val() }, function (data) {
 
-                $.each(data, function (i, subcategory) {
-                    item += "<option value='" + subcategory.value + "'>" + subcategory.text + "</option>";
+                var options = '';
+                departmentOptions.html('');
+
+                $.each(data, function (i, department) {
+                    options += "<option value='" + department.value + "'>" + department.text + "</option>";
                 });
-                $("#department").html(item);
+                departmentOptions.html(options);
+
             });
         });
     });
