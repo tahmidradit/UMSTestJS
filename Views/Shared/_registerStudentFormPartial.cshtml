@@ -1,8 +1,8 @@
 @model UMSTestJS.Models.ViewModels.StudentViewModel
 @using UMSTestJS.Extentions
 
-<div>
-    <form method="POST" data-ajax="true" data-ajax-complete="PageModalActions()" asp-controller="Student" asp-action="RegisterStudent">
+<div id="frm">
+    <form method="POST" data-ajax="true" data-ajax-complete="StudentPageModalActions()"  asp-controller="Student" asp-action="RegisterStudent">
         <div class="col-12">
             <div class="form-group">
                 <div class="col-2 ">
@@ -32,15 +32,13 @@
     </form>
 </div>
 
-<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
-<script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
-<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
-<script src="~/lib/jquery.unobtrusive-ajax/jquery.unobtrusive-ajax.min.js"></script>
 <script>
-    function PageModalActions() {
+
+    function StudentPageModalActions() {
         $('#createStudentPageModal').modal('toggle');
         document.getElementById("name").value = "";
         document.getElementById("department").value = "";
-        $("#tbl").load(" #tbl");
-    }   
+        $("#studentsTable").load(" #studentsTable");
+    }
+
 </script>

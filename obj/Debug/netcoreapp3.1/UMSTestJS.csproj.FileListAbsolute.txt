@@ -751,7 +751,6 @@
 /home/tahmid/Desktop/Projects/GitRepo/UMSTestJS/obj/Debug/netcoreapp3.1/Razor/Views/Home/Privacy.cshtml.g.cs
 /home/tahmid/Desktop/Projects/GitRepo/UMSTestJS/obj/Debug/netcoreapp3.1/Razor/Views/Shared/Error.cshtml.g.cs
 /home/tahmid/Desktop/Projects/GitRepo/UMSTestJS/obj/Debug/netcoreapp3.1/Razor/Views/Shared/_Layout.cshtml.g.cs
-/home/tahmid/Desktop/Projects/GitRepo/UMSTestJS/obj/Debug/netcoreapp3.1/Razor/Views/Shared/_registerStudentPartial.cshtml.g.cs
 /home/tahmid/Desktop/Projects/GitRepo/UMSTestJS/obj/Debug/netcoreapp3.1/Razor/Views/Shared/_ValidationScriptsPartial.cshtml.g.cs
 /home/tahmid/Desktop/Projects/GitRepo/UMSTestJS/obj/Debug/netcoreapp3.1/Razor/Views/Student/Index.cshtml.g.cs
 /home/tahmid/Desktop/Projects/GitRepo/UMSTestJS/obj/Debug/netcoreapp3.1/Razor/Views/_ViewImports.cshtml.g.cs
@@ -765,6 +764,10 @@
 /home/tahmid/Desktop/Projects/GitRepo/UMSTestJS/obj/Debug/netcoreapp3.1/UMSTestJS.dll
 /home/tahmid/Desktop/Projects/GitRepo/UMSTestJS/obj/Debug/netcoreapp3.1/UMSTestJS.pdb
 /home/tahmid/Desktop/Projects/GitRepo/UMSTestJS/obj/Debug/netcoreapp3.1/UMSTestJS.genruntimeconfig.cache
-/home/tahmid/Desktop/Projects/GitRepo/UMSTestJS/obj/Debug/netcoreapp3.1/Razor/Views/Shared/_addDepartmentPartial.cshtml.g.cs
 /home/tahmid/Desktop/Projects/GitRepo/UMSTestJS/obj/Debug/netcoreapp3.1/Razor/Views/Department/Index.cshtml.g.cs
-/home/tahmid/Desktop/Projects/GitRepo/UMSTestJS/obj/Debug/netcoreapp3.1/Razor/Views/Shared/_createStudentPartial.cshtml.g.cs
+/home/tahmid/Desktop/Projects/GitRepo/UMSTestJS/obj/Debug/netcoreapp3.1/Razor/Views/Shared/_addDepartmentFormPartial.cshtml.g.cs
+/home/tahmid/Desktop/Projects/GitRepo/UMSTestJS/obj/Debug/netcoreapp3.1/Razor/Views/Shared/_addDepartmentModalPartial.cshtml.g.cs
+/home/tahmid/Desktop/Projects/GitRepo/UMSTestJS/obj/Debug/netcoreapp3.1/Razor/Views/Shared/_registerStudentFormPartial.cshtml.g.cs
+/home/tahmid/Desktop/Projects/GitRepo/UMSTestJS/obj/Debug/netcoreapp3.1/Razor/Views/Shared/_registerStudentModalPartial.cshtml.g.cs
+/home/tahmid/Desktop/Projects/GitRepo/UMSTestJS/obj/Debug/netcoreapp3.1/Razor/Views/Shared/_departmentsIndexPartial.cshtml.g.cs
+/home/tahmid/Desktop/Projects/GitRepo/UMSTestJS/obj/Debug/netcoreapp3.1/Razor/Views/Shared/_studentsIndexPartial.cshtml.g.cs

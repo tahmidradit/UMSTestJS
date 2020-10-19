@@ -44,7 +44,7 @@ namespace UMSTestJS.Controllers
                 await context.Students.AddAsync(student);
                 await context.SaveChangesAsync();
             }
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction();
         }
         public async Task<IActionResult> DepartmentsListJsonReturn()
         {
@@ -53,6 +53,17 @@ namespace UMSTestJS.Controllers
             return Json(new SelectList(departments, "Id", "Name"));
             //return new JsonResult(departments);
             //return Json(context.Departments.Select(m => new { Id = m.Id, Name = m.Name})); 
+        }
+
+        [HttpPost,ValidateAntiForgeryToken]
+        public async Task<IActionResult> AddDepartment(Department department)
+        {
+            if(ModelState.IsValid)
+            {
+                await context.Departments.AddAsync(department);
+                await context.SaveChangesAsync();   
+            }
+            return RedirectToAction();
         }
     }
 }

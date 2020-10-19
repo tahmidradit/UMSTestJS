@@ -1,50 +1,47 @@
 @model UMSTestJS.Models.ViewModels.StudentViewModel
+
 @{
-    ViewData["Title"] = "Index - Student";
+    ViewData["Title"] = "Index";
     Layout="~/Views/Shared/_Layout.cshtml";  
 }
 
-<div class="col-12">
-    <div class="row">
-        <div class="col-4">
-            <h2 class="text-primary">Students List</h2>
-        </div>
-        <div align="right" class="col-8">
-            <a data-toggle="modal" style="cursor: pointer;" data-target="#createStudentPageModal" class="btn btn-primary text-white form control"><i class="fas fa-plus"></i> &nbsp; Student</a>
-        </div>
-    </div>
-    <br>
-    @if(Model.Students.Count() > 0)
-    {
-        <table id="tbl" class="table table-hover bordered table-sm text-center">
-            <thead class="table table-primary">
-                <tr>
-                    <th>Id</th>
-                    <th>Name</th>
-                    <th>Department</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var item in Model.Students)
-                {
-                    <tr>
-                        <td>@Html.DisplayFor(m => item.Id)</td>
-                        <td>@Html.DisplayFor(m => item.Name)</td>
-                        <td>@Html.DisplayFor(m => item.Department.Name)</td>
-                    </tr>
-                } 
-            </tbody>
-        </table>
-    }
-    else
-    {
-        <p>No Students</p>
-    }
+<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+<script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+<script src="~/lib/jquery.unobtrusive-ajax/jquery.unobtrusive-ajax.min.js"></script>
+
+
+<div id="btnDiv" class="col-md-12 col-sm-12 row">
+    <div align="right" class="col-12">
+        <a data-toggle="modal" style="cursor: pointer;" data-target="#addDepartmentPageModal" class="btn btn-primary text-white form control"><i class="fas fa-plus"></i> &nbsp; Department</a> &nbsp;
+        <a data-toggle="modal" style="cursor: pointer;" id="create" data-target="#createStudentPageModal" class="btn btn-primary text-white form control"><i class="fas fa-plus"></i> &nbsp; Student</a>
+    </div>  
+</div>
+<br>
+<div class="col-md-12 col-sm-12 row">
+    <partial name="_studentsIndexPartial" model="@Model.Students" /> <br>
+    <partial name="_departmentsIndexPartial" model="@Model.Departments" />
 </div>
 
-<partial name="_createStudentPartial" />
+<partial name="_registerStudentModalPartial" />
+<partial name="_addDepartmentModalPartial" model="@Model.Department" />
 
+@section scripts{
+    <script> 
+    $("#create").click(function () {
+            $(document).ready(function (){
+                var url = '@Url.Action("DepartmentsListJsonReturn","Student")';
+                $.getJSON(url, { id: $("#department").val() }, function (data) {
 
+                var item = '';
+                $("#department").html('');
 
-
-
+                $.each(data, function (i, subcategory) {
+                    item += "<option value='" + subcategory.value + "'>" + subcategory.text + "</option>";
+                });
+                $("#department").html(item);
+            });
+        });
+    });
+    </script>
+}

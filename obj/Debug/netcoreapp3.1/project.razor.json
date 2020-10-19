@@ -14397,6 +14397,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/home/tahmid/Desktop/Projects/GitRepo/UMSTestJS/Views/Shared/_registerStudentFormPartial.cshtml",
+      "TargetPath": "Views\\Shared\\_registerStudentFormPartial.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/home/tahmid/Desktop/Projects/GitRepo/UMSTestJS/Views/Department/Index.cshtml",
       "TargetPath": "Views\\Department\\Index.cshtml",
       "FileKind": "mvc"
@@ -14412,8 +14417,23 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "/home/tahmid/Desktop/Projects/GitRepo/UMSTestJS/Views/Shared/_registerStudentPartial.cshtml",
-      "TargetPath": "Views\\Shared\\_registerStudentPartial.cshtml",
+      "FilePath": "/home/tahmid/Desktop/Projects/GitRepo/UMSTestJS/Views/Shared/_addDepartmentModalPartial.cshtml",
+      "TargetPath": "Views\\Shared\\_addDepartmentModalPartial.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/tahmid/Desktop/Projects/GitRepo/UMSTestJS/Views/Shared/_studentsIndexPartial.cshtml",
+      "TargetPath": "Views\\Shared\\_studentsIndexPartial.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/tahmid/Desktop/Projects/GitRepo/UMSTestJS/Views/Shared/_departmentsIndexPartial.cshtml",
+      "TargetPath": "Views\\Shared\\_departmentsIndexPartial.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/tahmid/Desktop/Projects/GitRepo/UMSTestJS/Views/Shared/_addDepartmentFormPartial.cshtml",
+      "TargetPath": "Views\\Shared\\_addDepartmentFormPartial.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -14427,8 +14447,8 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "/home/tahmid/Desktop/Projects/GitRepo/UMSTestJS/Views/Shared/_createStudentPartial.cshtml",
-      "TargetPath": "Views\\Shared\\_createStudentPartial.cshtml",
+      "FilePath": "/home/tahmid/Desktop/Projects/GitRepo/UMSTestJS/Views/Shared/_registerStudentModalPartial.cshtml",
+      "TargetPath": "Views\\Shared\\_registerStudentModalPartial.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -14439,11 +14459,6 @@
     {
       "FilePath": "/home/tahmid/Desktop/Projects/GitRepo/UMSTestJS/Views/Student/Index.cshtml",
       "TargetPath": "Views\\Student\\Index.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "/home/tahmid/Desktop/Projects/GitRepo/UMSTestJS/Views/Shared/_addDepartmentPartial.cshtml",
-      "TargetPath": "Views\\Shared\\_addDepartmentPartial.cshtml",
       "FileKind": "mvc"
     },
     {
