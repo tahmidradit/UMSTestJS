@@ -26,26 +26,25 @@
 <partial name="_registerStudentModalPartial" />
 <partial name="_addDepartmentModalPartial" model="@Model.Department" />
 
-@section scripts{
+@section Scripts {
     <script> 
-    $("#registerStudent").click(function () {
-            $(document).ready(function (){
+        $("#registerStudent").click(function () {
+            $(document).ready(function () {
                 
                 var url = '@Url.Action("DepartmentsListJsonReturn","Student")';
                 var departmentOptions = $("#department");
 
                 $.getJSON(url, { id: departmentOptions.val() }, function (data) {
 
-                var options = '';
-                departmentOptions.html('');
+                    var options = '';
+                    departmentOptions.html('');
 
-                $.each(data, function (i, department) {
-                    options += "<option value='" + department.value + "'>" + department.text + "</option>";
+                    $.each(data, function (i, department) {
+                        options += "<option value='" + department.value + "'>" + department.text + "</option>";
+                    });
+                    departmentOptions.html(options);
                 });
-                departmentOptions.html(options);
-
             });
         });
-    });
     </script>
 }
